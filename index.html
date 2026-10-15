@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f4f5f0" />
+    <title>Create your account | Omabell</title>
+
+    <!--
+      ┌─────────────────────────────────────────────────────────────┐
+      │  ANTI-FLASH SCRIPT  (runs immediately, before anything else) │
+      │                                                             │
+      │  What this does: the moment the browser reads this line,    │
+      │  before any CSS or JS has loaded, it checks localStorage    │
+      │  for the user's saved language. If it finds Arabic ("ar"),  │
+      │  it sets dir="rtl" on the <html> element RIGHT NOW.         │
+      │  This prevents a one-frame flash of a left-to-right layout  │
+      │  before the page's JavaScript takes over.                   │
+      └─────────────────────────────────────────────────────────────┘
+    -->
+    <script>
+      (function () {
+        var l = localStorage.getItem("preferredLanguage");
+        if (l) document.documentElement.lang = l;
+        if (l === "ar") document.documentElement.dir = "rtl";
+      })();
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!--
+      translations.js MUST come BEFORE script.js.
+      Both use "defer", which means:
+        1. The browser downloads them in parallel (fast).
+        2. They run IN ORDER after the page HTML is built.
+      So translations.js always runs first, making `translations`
+      available when script.js starts.
+    -->
+    <script src="translations.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <!--
+        The wordmark links to #main-content, which is an
+        "skip to content" anchor. Useful for keyboard users.
+      -->
+      <a class="wordmark" href="#main-content" aria-label="Omabell home"
+        >OMABELL<span>.</span></a
+      >
+      <p data-i18n="headerSubtitle">Profile registration</p>
+
+      <!--
+        LANGUAGE SWITCHER
+        The aria-label is set dynamically by applyLanguage() in
+        script.js so it reads in the active language.
+      -->
+      <div class="lang-switcher">
+        <select
+          id="languageSwitcher"
+          aria-label="Choose language"
+          data-i18n-aria-label="langAriaLabel"
+        >
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="ar">العربية</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <section class="form-intro" aria-labelledby="page-title">
+        <p class="eyebrow" data-i18n="eyebrow">PERSONAL DETAILS</p>
+        <h1 id="page-title" data-i18n="pageTitle">Create your account</h1>
+        <p data-i18n="pageSubtitle">Enter your details below to get started.</p>
+      </section>
+
+      <form
+        id="signupForm"
+        action="https://formsubmit.co/ajax/urban.needles00@gmail.com"
+        method="post"
+      >
+        <input type="hidden" name="_subject" value="New Omabell registration" />
+        <input type="hidden" name="_template" value="table" />
+
+        <!--
+          STEP INDICATOR
+          The "01" and "02" numbers are kept outside the translatable
+          <span> so they remain as digits in all languages.
+        -->
+        <nav class="step-indicator" aria-label="Form progress">
+          <span
+            class="step-indicator__step is-current"
+            data-step-indicator="1"
+            aria-current="step"
+            >01 <span data-i18n="step1Label">Account &amp; profile</span></span
+          >
+          <span class="step-indicator__line" aria-hidden="true"></span>
+          <span class="step-indicator__step" data-step-indicator="2"
+            >02 <span data-i18n="step2Label">Family &amp; consent</span></span
+          >
+        </nav>
+
+        <!-- ═══════════════════════════════════════════════════════
+             STEP 1 — Account & profile
+             ═══════════════════════════════════════════════════════ -->
+        <section
+          class="form-step"
+          data-step="1"
+          aria-labelledby="step-one-title"
+        >
+          <h2 id="step-one-title" tabindex="-1" data-i18n="step1Heading">
+            Account &amp; profile
+          </h2>
+
+          <!-- Name fields -->
+          <fieldset class="form-group">
+            <div class="field-grid field-grid--three">
+              <div class="field">
+                <!--
+                  LABEL STRUCTURE — important for i18n:
+                  The label text is wrapped in a <span data-i18n="…">.
+                  The red asterisk (*) lives in its own <span aria-hidden="true">.
+                  This lets script.js update ONLY the text without wiping
+                  out the asterisk span.
+                -->
+                <label for="lastName">
+                  <span data-i18n="labelLastName">Last name (surname)</span>
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="lastName"
+                  name="Last name"
+                  type="text"
+                  autocomplete="family-name"
+                  required
+                  minlength="2"
+                  maxlength="60"
+                />
+                <small
+                  class="field-message"
+                  id="lastNameMessage"
+                  aria-live="polite"
+                ></small>
+              </div>
+              <div class="field">
+                <label for="firstName">
+                  <span data-i18n="labelFirstName">First name</span>
+                  <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  id="firstName"
+                  name="First name"
+                  type="text"
+                  autocomplete="given-name"
+                  required
+                  minlength="2"
+                  maxlength="60"
+                />
+                <small
+                  class="field-message"
+                  id="firstNameMessage"
+                  aria-live="polite"
+                ></small>
+              </div>
+              <div class="field">
+                <!--
+                  "optional" note also gets a data-i18n so it
+                  translates along with everything else.
+                -->
+                <label for="otherName">
+                  <span data-i18n="labelOtherName">Other name</span>
+                  <span class="optional-note" data-i18n="optionalNote">optional</span>
+                </label>
+                <input
+                  id="otherName"
+                  name="Other name"
+                  type="text"
+                  autocomplete="additional-name"
+                  maxlength="60"
+                />
+                <small
+                  class="field-message"
+                  id="otherNameMessage"
+                  aria-live="polite"
+                ></small>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Email & Gender -->
+          <div class="field-grid field-grid--two">
+            <div class="field">
+              <label for="email">
+                <span data-i18n="labelEmail">Email address</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="email"
+                name="Email"
+                type="email"
+                autocomplete="email"
+                inputmode="email"
+                data-i18n-placeholder="placeholderEmail"
+                placeholder="name@example.com"
+                required
+                maxlength="254"
+              />
+              <small
+                class="field-message"
+                id="emailMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+            <div class="field">
+              <label for="gender">
+                <span data-i18n="labelGender">Gender</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <select id="gender" name="Gender" required>
+                <option value="" data-i18n="genderChoose">Choose an option</option>
+                <option value="Male" data-i18n="genderMale">Male</option>
+                <option value="Female" data-i18n="genderFemale">Female</option>
+              </select>
+              <small
+                class="field-message"
+                id="genderMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+          </div>
+
+          <!-- Password fields -->
+          <fieldset class="form-group">
+            <div class="field-grid field-grid--two">
+              <div class="field">
+                <label for="password">
+                  <span data-i18n="labelPassword">Password</span>
+                  <span aria-hidden="true">*</span>
+                </label>
+                <div class="input-with-action">
+                  <input
+                    id="password"
+                    type="password"
+                    autocomplete="new-password"
+                    required
+                    minlength="8"
+                    maxlength="128"
+                    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}"
+                    aria-describedby="passwordRules passwordStrength"
+                    data-error-pattern="errorPasswordPattern"
+                  />
+                  <!--
+                    data-error-pattern tells getValidationMessage() in
+                    script.js which translation key to use when this
+                    specific field has a pattern error. This replaces
+                    the old fragile check:  if (control.id === "password")
+                  -->
+                  <button
+                    class="text-action"
+                    type="button"
+                    data-toggle-password="password"
+                    aria-label="Show password"
+                    aria-pressed="false"
+                  >
+                    Show
+                  </button>
+                </div>
+                <small id="passwordRules" class="field-hint" data-i18n="passwordRules"
+                  >Use 8+ characters with uppercase, lowercase, a number, and a
+                  symbol.</small
+                >
+                <small
+                  class="field-message"
+                  id="passwordMessage"
+                  aria-live="polite"
+                ></small>
+                <div class="strength-row">
+                  <span data-i18n="passwordStrengthLabel">Password strength</span>
+                  <strong id="passwordStrength" class="strength-value">Not set</strong>
+                </div>
+                <meter
+                  id="passwordMeter"
+                  min="0"
+                  max="4"
+                  value="0"
+                  aria-label="Password strength"
+                ></meter>
+              </div>
+              <div class="field">
+                <label for="confirmPassword">
+                  <span data-i18n="labelConfirmPassword">Confirm password</span>
+                  <span aria-hidden="true">*</span>
+                </label>
+                <div class="input-with-action">
+                  <input
+                    id="confirmPassword"
+                    type="password"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <button
+                    class="text-action"
+                    type="button"
+                    data-toggle-password="confirmPassword"
+                    aria-label="Show confirm password"
+                    aria-pressed="false"
+                  >
+                    Show
+                  </button>
+                </div>
+                <small
+                  class="field-message"
+                  id="confirmPasswordMessage"
+                  aria-live="polite"
+                ></small>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Phone & Nationality -->
+          <div class="field-grid field-grid--two">
+            <div class="field">
+              <label for="phone">
+                <span data-i18n="labelPhone">Phone number</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <div class="phone-row">
+                <select
+                  id="phoneCountryCode"
+                  name="Phone country code"
+                  autocomplete="tel-country-code"
+                  aria-label="Phone country code"
+                  required
+                >
+                  <option value="+234" selected>Nigeria (+234)</option>
+                  <option value="+233">Ghana (+233)</option>
+                  <option value="+254">Kenya (+254)</option>
+                  <option value="+27">South Africa (+27)</option>
+                  <option value="+44">United Kingdom (+44)</option>
+                  <option value="+1">United States/Canada (+1)</option>
+                  <option value="+61">Australia (+61)</option>
+                  <option value="+33">France (+33)</option>
+                  <option value="+49">Germany (+49)</option>
+                  <option value="+91">India (+91)</option>
+                  <option value="+353">Ireland (+353)</option>
+                  <option value="+81">Japan (+81)</option>
+                  <option value="+86">China (+86)</option>
+                  <option value="+971">United Arab Emirates (+971)</option>
+                </select>
+                <input
+                  id="phone"
+                  name="Phone number"
+                  type="tel"
+                  autocomplete="tel-national"
+                  inputmode="tel"
+                  required
+                  minlength="7"
+                  maxlength="15"
+                  pattern="[0-9]{7,15}"
+                  data-i18n-placeholder="placeholderPhone"
+                  placeholder="8012345678"
+                  aria-describedby="phoneMessage"
+                  data-error-pattern="errorPhonePattern"
+                />
+              </div>
+              <small
+                class="field-message"
+                id="phoneMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+            <div class="field">
+              <label for="nationality">
+                <span data-i18n="labelNationality">Nationality</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="nationality"
+                name="Nationality"
+                type="text"
+                list="countryOptions"
+                autocomplete="country-name"
+                required
+                data-i18n-placeholder="placeholderNationality"
+                placeholder="Type a country name"
+              />
+              <datalist id="countryOptions">
+                <option value="Nigeria"></option>
+                <option value="Ghana"></option>
+                <option value="Kenya"></option>
+                <option value="South Africa"></option>
+                <option value="United Kingdom"></option>
+                <option value="United States"></option>
+                <option value="Canada"></option>
+                <option value="India"></option>
+                <option value="Australia"></option>
+                <option value="Algeria"></option>
+                <option value="Argentina"></option>
+                <option value="Brazil"></option>
+                <option value="China"></option>
+                <option value="Egypt"></option>
+                <option value="France"></option>
+                <option value="Germany"></option>
+                <option value="Indonesia"></option>
+                <option value="Ireland"></option>
+                <option value="Italy"></option>
+                <option value="Japan"></option>
+                <option value="Mexico"></option>
+                <option value="Morocco"></option>
+                <option value="Nepal"></option>
+                <option value="New Zealand"></option>
+                <option value="Pakistan"></option>
+                <option value="Philippines"></option>
+                <option value="Rwanda"></option>
+                <option value="Saudi Arabia"></option>
+                <option value="Senegal"></option>
+                <option value="Singapore"></option>
+                <option value="Spain"></option>
+                <option value="Tanzania"></option>
+                <option value="Uganda"></option>
+                <option value="United Arab Emirates"></option>
+                <option value="Zimbabwe"></option>
+              </datalist>
+              <small
+                class="field-message"
+                id="nationalityMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+          </div>
+
+          <!-- State / LGA / Date of birth -->
+          <div class="field-grid field-grid--three">
+            <div class="field">
+              <label for="stateOfOrigin">
+                <span data-i18n="labelStateOfOrigin">State of origin</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="stateOfOrigin"
+                name="State of origin"
+                type="text"
+                list="stateOptions"
+                required
+                data-i18n-placeholder="placeholderState"
+                placeholder="Choose or type a state"
+                autocomplete="address-level1"
+              />
+              <datalist id="stateOptions"></datalist>
+              <small
+                class="field-message"
+                id="stateOfOriginMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+            <div class="field">
+              <label for="lga">
+                <span data-i18n="labelLga">LGA / local area</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="lga"
+                name="Local government area"
+                type="text"
+                list="lgaOptions"
+                required
+                data-i18n-placeholder="placeholderLga"
+                placeholder="Choose or type an area"
+              />
+              <datalist id="lgaOptions"></datalist>
+              <small
+                class="field-message"
+                id="lgaMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+            <div class="field">
+              <label for="dateOfBirth">
+                <span data-i18n="labelDob">Date of birth</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <!--
+                NOTE: the min and max attributes are NOT set here.
+                script.js sets them dynamically so they always
+                reflect the current date (not the build date).
+                min = 120 years ago, max = 16 years ago.
+              -->
+              <input
+                id="dateOfBirth"
+                name="Date of birth"
+                type="date"
+                autocomplete="bday"
+                required
+              />
+              <small
+                class="field-message"
+                id="dateOfBirthMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+          </div>
+
+          <!-- Disability -->
+          <fieldset
+            class="form-group choice-group"
+            aria-describedby="disabilityChoiceMessage"
+          >
+            <!--
+              LEGEND STRUCTURE — same pattern as labels:
+              The text is in an inner <span data-i18n="…"> so the
+              asterisk <span> is preserved when text is swapped.
+            -->
+            <legend>
+              <span data-i18n="disabilityLegend">Do you have a disability?</span>
+              <span aria-hidden="true">*</span>
+            </legend>
+            <label class="choice"
+              ><input type="radio" name="Has disability" value="No" required />
+              <span data-i18n="answerNo">No</span></label
+            >
+            <label class="choice"
+              ><input type="radio" name="Has disability" value="Yes" required />
+              <span data-i18n="answerYes">Yes</span></label
+            >
+            <small
+              class="field-message"
+              id="disabilityChoiceMessage"
+              aria-live="polite"
+            ></small>
+            <div class="field conditional-field" id="disabilityDetails">
+              <label for="disabilityType">
+                <span data-i18n="labelDisabilityType">Please specify the type</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="disabilityType"
+                name="Disability type"
+                type="text"
+                maxlength="120"
+              />
+              <small
+                class="field-message"
+                id="disabilityTypeMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+          </fieldset>
+
+          <!-- Next button -->
+          <div class="step-actions step-actions--end">
+            <button
+              class="button button--primary"
+              id="nextButton"
+              type="button"
+              hidden
+            >
+              <span data-i18n="btnNext">Next</span>
+              <span aria-hidden="true">&#8594;</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             STEP 2 — Family & consent
+             ═══════════════════════════════════════════════════════ -->
+        <section
+          class="form-step"
+          data-step="2"
+          aria-labelledby="step-two-title"
+        >
+          <h2 id="step-two-title" tabindex="-1" data-i18n="step2Heading">
+            Family &amp; consent
+          </h2>
+
+          <!-- Married? -->
+          <fieldset
+            class="form-group choice-group"
+            aria-describedby="marriedMessage"
+          >
+            <legend>
+              <span data-i18n="marriedLegend">Are you married?</span>
+              <span aria-hidden="true">*</span>
+            </legend>
+            <label class="choice"
+              ><input type="radio" name="Married" value="No" required />
+              <span data-i18n="answerNo">No</span></label
+            >
+            <label class="choice"
+              ><input type="radio" name="Married" value="Yes" required />
+              <span data-i18n="answerYes">Yes</span></label
+            >
+            <small
+              class="field-message"
+              id="marriedMessage"
+              aria-live="polite"
+            ></small>
+            <div class="conditional-field" id="childrenDetails">
+              <fieldset class="choice-group" aria-describedby="childrenMessage">
+                <legend>
+                  <span data-i18n="childrenLegend">Do you have children?</span>
+                  <span aria-hidden="true">*</span>
+                </legend>
+                <label class="choice"
+                  ><input type="radio" name="Has children" value="No" />
+                  <span data-i18n="withoutChildren">Without children</span></label
+                >
+                <label class="choice"
+                  ><input type="radio" name="Has children" value="Yes" />
+                  <span data-i18n="withChildren">With children</span></label
+                >
+                <small
+                  class="field-message"
+                  id="childrenMessage"
+                  aria-live="polite"
+                ></small>
+              </fieldset>
+              <div class="field conditional-field" id="childrenCountField">
+                <label for="childrenCount">
+                  <span data-i18n="labelChildrenCount">Number of children</span>
+                  <span aria-hidden="true">*</span>
+                </label>
+                <select id="childrenCount" name="Number of children">
+                  <option value="" data-i18n="childrenCountChoose">Choose a number</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                </select>
+                <small
+                  class="field-message"
+                  id="childrenCountMessage"
+                  aria-live="polite"
+                ></small>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Next of kin -->
+          <div class="field-grid field-grid--two">
+            <div class="field">
+              <label for="nextOfKinName">
+                <span data-i18n="labelNextOfKinName">Next of kin full name</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="nextOfKinName"
+                name="Next of kin full name"
+                type="text"
+                autocomplete="off"
+                required
+                minlength="2"
+                maxlength="120"
+              />
+              <small
+                class="field-message"
+                id="nextOfKinNameMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+            <div class="field">
+              <label for="kinPhone">
+                <span data-i18n="labelKinPhone">Next of kin phone number</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <div class="phone-row">
+                <select
+                  id="kinCountryCode"
+                  name="Next of kin country code"
+                  aria-label="Next of kin phone country code"
+                  required
+                >
+                  <option value="+234" selected>Nigeria (+234)</option>
+                  <option value="+233">Ghana (+233)</option>
+                  <option value="+254">Kenya (+254)</option>
+                  <option value="+27">South Africa (+27)</option>
+                  <option value="+44">United Kingdom (+44)</option>
+                  <option value="+1">United States/Canada (+1)</option>
+                  <option value="+61">Australia (+61)</option>
+                  <option value="+33">France (+33)</option>
+                  <option value="+49">Germany (+49)</option>
+                  <option value="+91">India (+91)</option>
+                  <option value="+353">Ireland (+353)</option>
+                  <option value="+81">Japan (+81)</option>
+                  <option value="+86">China (+86)</option>
+                  <option value="+971">United Arab Emirates (+971)</option>
+                </select>
+                <input
+                  id="kinPhone"
+                  name="Next of kin phone number"
+                  type="tel"
+                  autocomplete="off"
+                  inputmode="tel"
+                  required
+                  minlength="7"
+                  maxlength="15"
+                  pattern="[0-9]{7,15}"
+                  data-i18n-placeholder="placeholderPhone"
+                  placeholder="8012345678"
+                  aria-describedby="kinPhoneMessage"
+                  data-error-pattern="errorPhonePattern"
+                />
+              </div>
+              <small
+                class="field-message"
+                id="kinPhoneMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+          </div>
+
+          <!-- NIN -->
+          <div class="field-grid field-grid--two">
+            <div class="field">
+              <label for="nin">
+                <span data-i18n="labelNin">National Identification Number (NIN)</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="nin"
+                name="National Identification Number"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                required
+                minlength="11"
+                maxlength="11"
+                pattern="[0-9]{11}"
+                data-i18n-placeholder="placeholderNin"
+                placeholder="11 digits"
+                data-error-pattern="errorNinPattern"
+              />
+              <small
+                class="field-message"
+                id="ninMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+          </div>
+
+          <!-- Terms checkbox -->
+          <div class="consent-field">
+            <label class="choice" for="terms">
+              <input
+                id="terms"
+                name="Terms accepted"
+                type="checkbox"
+                value="Yes"
+                required
+                aria-describedby="termsMessage"
+              />
+              <!--
+                TERMS TEXT STRUCTURE:
+                "I accept the" is one <span data-i18n="termsText">.
+                "Terms and Conditions" is the link with its own data-i18n.
+                They stay separate so the link href and id are untouched.
+              -->
+              <span>
+                <span data-i18n="termsText">I accept the</span>
+                <a href="#terms-details" id="termsLink" data-i18n="termsLink"
+                  >Terms and Conditions</a
+                >. <span aria-hidden="true">*</span>
+              </span>
+            </label>
+            <small
+              class="field-message"
+              id="termsMessage"
+              aria-live="polite"
+            ></small>
+          </div>
+
+          <details class="terms-details" id="terms-details">
+            <summary data-i18n="termsSummary">Read the Terms and Conditions</summary>
+            <p data-i18n="termsBody">
+              By submitting, you confirm that the details are accurate and
+              consent to sending them to Urban-Silhoutte. Password fields are
+              never sent.
+            </p>
+          </details>
+
+          <!-- Submit status live region -->
+          <p
+            class="submit-status"
+            id="submitStatus"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+          <!-- Back / Submit buttons -->
+          <div class="step-actions step-actions--split">
+            <button
+              class="button button--secondary"
+              id="backButton"
+              type="button"
+            >
+              <span aria-hidden="true">&#8592;</span>
+              <span data-i18n="btnBack">Back</span>
+            </button>
+            <button
+              class="button button--primary"
+              id="submitButton"
+              type="submit"
+            >
+              <!--
+                submitButtonLabel is targeted directly by script.js
+                to swap "Sign up" ↔ "Sending…" without touching
+                the button element itself.
+              -->
+              <span id="submitButtonLabel" data-i18n="btnSignUp">Sign up</span>
+            </button>
+          </div>
+        </section>
+      </form>
+
+      <!-- ═══════════════════════════════════════════════════════
+           THANK YOU screen (shown after successful submit)
+           ═══════════════════════════════════════════════════════ -->
+      <section
+        class="thank-you"
+        id="thankYou"
+        tabindex="-1"
+        aria-labelledby="thankYouTitle"
+        hidden
+      >
+        <p class="eyebrow" data-i18n="thankYouEyebrow">REGISTRATION RECEIVED</p>
+        <h1 id="thankYouTitle" data-i18n="thankYouTitle">
+          Thank you for your response.
+        </h1>
+        <p data-i18n="thankYouBody">You can now close this form.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p data-i18n="footerText">All Rights Reserved. Created by Omabell 2026</p>
+    </footer>
+  </body>
+</html>
