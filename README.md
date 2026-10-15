@@ -28,45 +28,6 @@ A modern, accessible, and responsive multi-step registration form featuring clie
 
 ---
 
-## 📂 Project Structure
-
-```text
-.
-├── index.html          # Semantic HTML structure with data-i18n hooks and accessibility attributes
-├── style.css           # Modern design system, responsive grids, dark/light themes, and RTL layout rules
-├── script.js           # Multi-step state management, dynamic validation, and DOM manipulation
-└── translations.js     # Bundled dictionary containing UI strings for all 5 languages
-```
-
----
-
-## 🚀 Getting Started
-
-### Local Setup
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/omarademola/My-form-validation.git
-   ```
-2. Navigate into the project folder:
-   ```bash
-   cd My-form-validation
-   ```
-3. Open `index.html` in your browser or run a local dev server (e.g. using VS Code Live Server).
-
----
-
-## 🌐 Deploying to Vercel
-
-You can deploy this repository to **Vercel** with zero configuration:
-
-1. Go to [vercel.com](https://vercel.com) and log in with your GitHub account.
-2. Click **"Add New..."** → **"Project"**.
-3. Import the **`My-form-validation`** repository.
-4. Keep the default settings (Framework Preset: **Other**) and click **Deploy**.
-5. Your project will be live in seconds with a custom `.vercel.app` URL and automatic deployments on every commit.
-
----
-
 ## ♿ Accessibility (a11y) & UX Considerations
 
 - Full screen-reader support via explicit `<label>` bindings, descriptive `aria-describedby` links, and live error announcements.
@@ -84,4 +45,3 @@ Created by **Omabell** / [@omarademola](https://github.com/omarademola).
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE) — free to use and adapt.
-
