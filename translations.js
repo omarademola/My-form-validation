@@ -62,7 +62,7 @@ const translations = {
       "Enter full residential street address (min 30 characters)",
     placeholderNin: "11 digits",
     hintHouseImage:
-      "Accepts image files only (PNG, JPG, WebP, etc. No PDF). Size must be 200 KB.",
+      "Images only (PNG, JPG, WebP, etc.; no PDF). Maximum file size: 200 KB.",
     // Select options
     genderChoose: "Choose an option",
     genderMale: "Male",
@@ -176,7 +176,7 @@ const translations = {
       "Entrez l\u2019adresse r\u00e9sidentielle compl\u00e8te (min. 30 caract\u00e8res)",
     placeholderNin: "11 chiffres",
     hintHouseImage:
-      "Fichiers image uniquement (PNG, JPG, WebP, etc. Pas de PDF). La taille doit \u00eatre comprise entre 1 Ko et 200 Ko.",
+      "Images uniquement (PNG, JPG, WebP, etc. ; pas de PDF). Taille maximale du fichier : 200 Ko.",
     genderChoose: "Choisissez une option",
     genderMale: "Homme",
     genderFemale: "Femme",
@@ -286,7 +286,7 @@ const translations = {
       "Introduce la direcci\u00f3n residencial completa (m\u00edn. 30 caracteres)",
     placeholderNin: "11 d\u00edgitos",
     hintHouseImage:
-      "Solo archivos de imagen (PNG, JPG, WebP, etc. No PDF). El tama\u00f1o debe estar entre 1 KB y 200 KB.",
+      "Solo im\u00e1genes (PNG, JPG, WebP, etc.; no PDF). Tama\u00f1o m\u00e1ximo del archivo: 200 KB.",
     genderChoose: "Elige una opci\u00f3n",
     genderMale: "Masculino",
     genderFemale: "Femenino",
@@ -420,7 +420,7 @@ const translations = {
       "\u0623\u062f\u062e\u0644 \u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0633\u0643\u0646 \u0628\u0627\u0644\u0643\u0627\u0645\u0644 (30 \u062d\u0631\u0641\u064b\u0627 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644)",
     placeholderNin: "11 \u0631\u0642\u0645\u064b\u0627",
     hintHouseImage:
-      "\u0645\u0644\u0641\u0627\u062a \u0627\u0644\u0635\u0648\u0631 \u0641\u0642\u0637 (PNG \u0648JPG \u0648WebP \u0625\u0644\u062e. \u0644\u0627 \u064a\u064f\u0642\u0628\u0644 PDF). \u064a\u062c\u0628 \u0623\u0646 \u064a\u0643\u0648\u0646 \u0627\u0644\u062d\u062c\u0645 \u0628\u064a\u0646 1 \u0643\u064a\u0644\u0648\u0628\u0627\u064a\u062a \u0648200 \u0643\u064a\u0644\u0648\u0628\u0627\u064a\u062a.",
+      "\u0635\u0648\u0631 \u0641\u0642\u0637 (PNG \u0648JPG \u0648WebP \u0625\u0644\u062e. \u0628\u062f\u0648\u0646 PDF). \u0627\u0644\u062d\u062c\u0645 \u0627\u0644\u0623\u0642\u0635\u0649 \u0644\u0644\u0645\u0644\u0641: 200 \u0643\u064a\u0644\u0648\u0628\u0627\u064a\u062a.",
     genderChoose:
       "\u0627\u062e\u062a\u0631 \u062e\u064a\u0627\u0631\u064b\u0627",
     genderMale: "\u0630\u0643\u0631",
@@ -553,7 +553,7 @@ const translations = {
       "Vollst\u00e4ndige Wohnadresse eingeben (mind. 30 Zeichen)",
     placeholderNin: "11 Ziffern",
     hintHouseImage:
-      "Nur Bilddateien (PNG, JPG, WebP usw. Kein PDF). Gr\u00f6\u00dfe muss zwischen 1 KB und 200 KB liegen.",
+      "Nur Bilder (PNG, JPG, WebP usw.; keine PDF-Dateien). Maximale Dateigr\u00f6\u00dfe: 200 KB.",
     genderChoose: "Option ausw\u00e4hlen",
     genderMale: "M\u00e4nnlich",
     genderFemale: "Weiblich",
