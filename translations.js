@@ -104,7 +104,7 @@ const translations = {
     thankYouTitle: "Thank you for your response.",
     thankYouBody: "You can now close this form.",
     // Footer
-    footerText: "All Rights Reserved. Created by Omabell 2026",
+    footerText: "© Created by Omabell 2026. All Rights Reserved.",
     // Language switcher
     langAriaLabel: "Choose language",
     // Validation errors
@@ -211,7 +211,7 @@ const translations = {
     thankYouTitle: "Merci pour votre r\u00e9ponse.",
     thankYouBody: "Vous pouvez maintenant fermer ce formulaire.",
     footerText:
-      "Tous droits r\u00e9serv\u00e9s. Cr\u00e9\u00e9 par Omabell 2026",
+      "© Cr\u00e9\u00e9 par Omabell 2026. Tous droits r\u00e9serv\u00e9s.",
     langAriaLabel: "Choisir la langue",
     errorRequired: "Ce champ est obligatoire.",
     errorEmail: "Entrez une adresse e-mail valide.",
@@ -320,7 +320,7 @@ const translations = {
     thankYouEyebrow: "REGISTRO RECIBIDO",
     thankYouTitle: "Gracias por tu respuesta.",
     thankYouBody: "Ahora puedes cerrar este formulario.",
-    footerText: "Todos los derechos reservados. Creado por Omabell 2026",
+    footerText: "© Creado por Omabell 2026. Todos los derechos reservados.",
     langAriaLabel: "Elegir idioma",
     errorRequired: "Este campo es obligatorio.",
     errorEmail: "Introduce una direcci\u00f3n de correo v\u00e1lida.",
@@ -468,7 +468,7 @@ const translations = {
     thankYouBody:
       "\u064a\u0645\u0643\u0646\u0643 \u0627\u0644\u0622\u0646 \u0625\u063a\u0644\u0627\u0642 \u0647\u0630\u0627 \u0627\u0644\u0646\u0645\u0648\u0630\u062c.",
     footerText:
-      "\u062c\u0645\u064a\u0639 \u0627\u0644\u062d\u0642\u0648\u0642 \u0645\u062d\u0641\u0648\u0638\u0629. \u0623\u0646\u0634\u0623\u0647 Omabell 2026",
+      "© \u0623\u0646\u0634\u0623\u0647 Omabell 2026. \u062c\u0645\u064a\u0639 \u0627\u0644\u062d\u0642\u0648\u0642 \u0645\u062d\u0641\u0648\u0638\u0629.",
     langAriaLabel: "\u0627\u062e\u062a\u0631 \u0627\u0644\u0644\u063a\u0629",
     errorRequired:
       "\u0647\u0630\u0627 \u0627\u0644\u062d\u0642\u0644 \u0645\u0637\u0644\u0648\u0628.",
@@ -587,7 +587,7 @@ const translations = {
     thankYouEyebrow: "REGISTRIERUNG ERHALTEN",
     thankYouTitle: "Vielen Dank f\u00fcr Ihre Antwort.",
     thankYouBody: "Sie k\u00f6nnen dieses Formular jetzt schlie\u00dfen.",
-    footerText: "Alle Rechte vorbehalten. Erstellt von Omabell 2026",
+    footerText: "© Erstellt von Omabell 2026. Alle Rechte vorbehalten.",
     langAriaLabel: "Sprache w\u00e4hlen",
     errorRequired: "Dieses Feld ist erforderlich.",
     errorEmail: "Geben Sie eine g\u00fcltige E-Mail-Adresse ein.",

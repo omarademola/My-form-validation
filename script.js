@@ -685,10 +685,7 @@ form.addEventListener("submit", async (event) => {
       if (control.type === "file") {
         const file = control.files && control.files[0];
         if (file) {
-          submission.append(
-            control.name,
-            `${file.name} (${(file.size / 1024).toFixed(1)} KB)`,
-          );
+          submission.append(control.name, file);
         }
         return;
       }
@@ -705,22 +702,12 @@ form.addEventListener("submit", async (event) => {
   submitStatus.className = "submit-status";
 
   try {
-    const payload = {};
-    for (const [key, value] of submission.entries()) {
-      if (key in payload) {
-        payload[key] = [].concat(payload[key], value);
-      } else {
-        payload[key] = value;
-      }
-    }
-
     const response = await fetch(form.action, {
       method: "POST",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload),
+      body: submission,
     });
     const responseText = await response.text();
     let result = {};
