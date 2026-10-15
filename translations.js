@@ -58,9 +58,11 @@ const translations = {
     placeholderNationality: "Type a country name",
     placeholderState: "Choose or type a state",
     placeholderLga: "Choose or type an area",
-    placeholderAddress: "Enter full residential street address (min 30 characters)",
+    placeholderAddress:
+      "Enter full residential street address (min 30 characters)",
     placeholderNin: "11 digits",
-    hintHouseImage: "Accepts image files only (PNG, JPG, WebP, etc. No PDF). Size must be between 1 KB and 200 KB.",
+    hintHouseImage:
+      "Accepts image files only (PNG, JPG, WebP, etc. No PDF). Size must be 200 KB.",
     // Select options
     genderChoose: "Choose an option",
     genderMale: "Male",
@@ -170,9 +172,11 @@ const translations = {
     placeholderNationality: "Tapez un nom de pays",
     placeholderState: "Choisissez ou tapez un \u00e9tat",
     placeholderLga: "Choisissez ou tapez une zone",
-    placeholderAddress: "Entrez l\u2019adresse r\u00e9sidentielle compl\u00e8te (min. 30 caract\u00e8res)",
+    placeholderAddress:
+      "Entrez l\u2019adresse r\u00e9sidentielle compl\u00e8te (min. 30 caract\u00e8res)",
     placeholderNin: "11 chiffres",
-    hintHouseImage: "Fichiers image uniquement (PNG, JPG, WebP, etc. Pas de PDF). La taille doit \u00eatre comprise entre 1 Ko et 200 Ko.",
+    hintHouseImage:
+      "Fichiers image uniquement (PNG, JPG, WebP, etc. Pas de PDF). La taille doit \u00eatre comprise entre 1 Ko et 200 Ko.",
     genderChoose: "Choisissez une option",
     genderMale: "Homme",
     genderFemale: "Femme",
@@ -212,10 +216,14 @@ const translations = {
     errorRequired: "Ce champ est obligatoire.",
     errorEmail: "Entrez une adresse e-mail valide.",
     errorTooShort: "Entrez au moins {min} caract\u00e8res.",
-    errorAddressTooShort: "L\u2019adresse doit comporter au moins 30 caract\u00e8res.",
-    errorImageOnly: "Veuillez t\u00e9l\u00e9verser un fichier image (le format PDF n\u2019est pas autoris\u00e9).",
-    errorImageTooSmall: "La taille de l\u2019image doit \u00eatre d\u2019au moins 1 Ko.",
-    errorImageTooLarge: "La taille de l\u2019image ne doit pas d\u00e9passer 200 Ko.",
+    errorAddressTooShort:
+      "L\u2019adresse doit comporter au moins 30 caract\u00e8res.",
+    errorImageOnly:
+      "Veuillez t\u00e9l\u00e9verser un fichier image (le format PDF n\u2019est pas autoris\u00e9).",
+    errorImageTooSmall:
+      "La taille de l\u2019image doit \u00eatre d\u2019au moins 1 Ko.",
+    errorImageTooLarge:
+      "La taille de l\u2019image ne doit pas d\u00e9passer 200 Ko.",
     errorPasswordPattern:
       "Utilisez des majuscules, minuscules, un chiffre et un symbole.",
     errorNinPattern: "Entrez exactement 11 chiffres.",
@@ -274,9 +282,11 @@ const translations = {
     placeholderNationality: "Escribe un nombre de pa\u00eds",
     placeholderState: "Elige o escribe un estado",
     placeholderLga: "Elige o escribe un \u00e1rea",
-    placeholderAddress: "Introduce la direcci\u00f3n residencial completa (m\u00edn. 30 caracteres)",
+    placeholderAddress:
+      "Introduce la direcci\u00f3n residencial completa (m\u00edn. 30 caracteres)",
     placeholderNin: "11 d\u00edgitos",
-    hintHouseImage: "Solo archivos de imagen (PNG, JPG, WebP, etc. No PDF). El tama\u00f1o debe estar entre 1 KB y 200 KB.",
+    hintHouseImage:
+      "Solo archivos de imagen (PNG, JPG, WebP, etc. No PDF). El tama\u00f1o debe estar entre 1 KB y 200 KB.",
     genderChoose: "Elige una opci\u00f3n",
     genderMale: "Masculino",
     genderFemale: "Femenino",
@@ -315,10 +325,13 @@ const translations = {
     errorRequired: "Este campo es obligatorio.",
     errorEmail: "Introduce una direcci\u00f3n de correo v\u00e1lida.",
     errorTooShort: "Introduce al menos {min} caracteres.",
-    errorAddressTooShort: "La direcci\u00f3n debe tener al menos 30 caracteres.",
+    errorAddressTooShort:
+      "La direcci\u00f3n debe tener al menos 30 caracteres.",
     errorImageOnly: "Por favor, sube un archivo de imagen (no se permite PDF).",
-    errorImageTooSmall: "El tama\u00f1o de la imagen debe ser de al menos 1 KB.",
-    errorImageTooLarge: "El tama\u00f1o de la imagen no debe superar los 200 KB.",
+    errorImageTooSmall:
+      "El tama\u00f1o de la imagen debe ser de al menos 1 KB.",
+    errorImageTooLarge:
+      "El tama\u00f1o de la imagen no debe superar los 200 KB.",
     errorPasswordPattern:
       "Usa may\u00fasculas, min\u00fasculas, un n\u00famero y un s\u00edmbolo.",
     errorNinPattern: "Introduce exactamente 11 d\u00edgitos.",
@@ -536,9 +549,11 @@ const translations = {
     placeholderNationality: "L\u00e4ndernamen eingeben",
     placeholderState: "Staat ausw\u00e4hlen oder eingeben",
     placeholderLga: "Bereich ausw\u00e4hlen oder eingeben",
-    placeholderAddress: "Vollst\u00e4ndige Wohnadresse eingeben (mind. 30 Zeichen)",
+    placeholderAddress:
+      "Vollst\u00e4ndige Wohnadresse eingeben (mind. 30 Zeichen)",
     placeholderNin: "11 Ziffern",
-    hintHouseImage: "Nur Bilddateien (PNG, JPG, WebP usw. Kein PDF). Gr\u00f6\u00dfe muss zwischen 1 KB und 200 KB liegen.",
+    hintHouseImage:
+      "Nur Bilddateien (PNG, JPG, WebP usw. Kein PDF). Gr\u00f6\u00dfe muss zwischen 1 KB und 200 KB liegen.",
     genderChoose: "Option ausw\u00e4hlen",
     genderMale: "M\u00e4nnlich",
     genderFemale: "Weiblich",
@@ -578,9 +593,12 @@ const translations = {
     errorEmail: "Geben Sie eine g\u00fcltige E-Mail-Adresse ein.",
     errorTooShort: "Geben Sie mindestens {min} Zeichen ein.",
     errorAddressTooShort: "Die Adresse muss mindestens 30 Zeichen lang sein.",
-    errorImageOnly: "Bitte laden Sie eine Bilddatei hoch (PDF ist nicht erlaubt).",
-    errorImageTooSmall: "Die Bildgr\u00f6\u00dfe muss mindestens 1 KB betragen.",
-    errorImageTooLarge: "Die Bildgr\u00f6\u00dfe darf 200 KB nicht \u00fcberschreiten.",
+    errorImageOnly:
+      "Bitte laden Sie eine Bilddatei hoch (PDF ist nicht erlaubt).",
+    errorImageTooSmall:
+      "Die Bildgr\u00f6\u00dfe muss mindestens 1 KB betragen.",
+    errorImageTooLarge:
+      "Die Bildgr\u00f6\u00dfe darf 200 KB nicht \u00fcberschreiten.",
     errorPasswordPattern:
       "Verwenden Sie Gro\u00df- und Kleinbuchstaben, eine Zahl und ein Symbol.",
     errorNinPattern: "Geben Sie genau 11 Ziffern ein.",

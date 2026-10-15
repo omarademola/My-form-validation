@@ -64,8 +64,16 @@ document.documentElement.classList.add("js-enabled");
 // Minimum age check: 16 years minimum, 120 years maximum
 const dobInput = document.getElementById("dateOfBirth");
 const today = new Date();
-const minAgeDate = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
-const maxAgeDate = new Date(today.getFullYear() - 120, today.getMonth(), today.getDate());
+const minAgeDate = new Date(
+  today.getFullYear() - 16,
+  today.getMonth(),
+  today.getDate(),
+);
+const maxAgeDate = new Date(
+  today.getFullYear() - 120,
+  today.getMonth(),
+  today.getDate(),
+);
 dobInput.max = minAgeDate.toISOString().slice(0, 10);
 dobInput.min = maxAgeDate.toISOString().slice(0, 10);
 
@@ -73,8 +81,14 @@ dobInput.min = maxAgeDate.toISOString().slice(0, 10);
 //  INTERNATIONALIZATION (i18n)
 // ──────────────────────────────────────────────
 function getTranslation(key, params = {}) {
-  const langData = typeof translations !== "undefined" ? (translations[currentLang] || translations.en) : {};
-  let text = langData[key] || (translations && translations.en && translations.en[key]) || key;
+  const langData =
+    typeof translations !== "undefined"
+      ? translations[currentLang] || translations.en
+      : {};
+  let text =
+    langData[key] ||
+    (translations && translations.en && translations.en[key]) ||
+    key;
   for (const [k, v] of Object.entries(params)) {
     text = text.replace(`{${k}}`, v);
   }
@@ -385,13 +399,10 @@ function validateControl(control, showEmpty = false) {
         file.type === "application/pdf" ||
         file.name.toLowerCase().endsWith(".pdf");
       const isImage = file.type.startsWith("image/");
-      const minSize = 1024; // 1 KB
       const maxSize = 200 * 1024; // 200 KB
 
       if (isPdf || !isImage) {
         control.setCustomValidity(getTranslation("errorImageOnly"));
-      } else if (file.size < minSize) {
-        control.setCustomValidity(getTranslation("errorImageTooSmall"));
       } else if (file.size > maxSize) {
         control.setCustomValidity(getTranslation("errorImageTooLarge"));
       } else {
@@ -558,7 +569,9 @@ function updatePasswordStrength() {
 
   passwordMeter.value = value ? score : 0;
   passwordStrength.textContent = localizedLabel;
-  passwordStrength.dataset.strength = value ? strengthKey.toLowerCase() : "none";
+  passwordStrength.dataset.strength = value
+    ? strengthKey.toLowerCase()
+    : "none";
 }
 
 function showStep(stepNumber) {
@@ -672,7 +685,10 @@ form.addEventListener("submit", async (event) => {
       if (control.type === "file") {
         const file = control.files && control.files[0];
         if (file) {
-          submission.append(control.name, `${file.name} (${(file.size / 1024).toFixed(1)} KB)`);
+          submission.append(
+            control.name,
+            `${file.name} (${(file.size / 1024).toFixed(1)} KB)`,
+          );
         }
         return;
       }
