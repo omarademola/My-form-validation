@@ -354,6 +354,7 @@ function getValidationMessage(control) {
   if (control.validity.valueMissing) return getTranslation("errorRequired");
   if (control.validity.typeMismatch) return getTranslation("errorEmail");
   if (control.validity.tooShort) {
+    if (control.id === "address") return getTranslation("errorAddressTooShort");
     return getTranslation("errorTooShort", { min: control.minLength });
   }
   if (control.validity.patternMismatch) {
@@ -377,11 +378,38 @@ function validateControl(control, showEmpty = false) {
     );
   }
 
+  if (control.id === "houseImage") {
+    const file = control.files && control.files[0];
+    if (file) {
+      const isPdf =
+        file.type === "application/pdf" ||
+        file.name.toLowerCase().endsWith(".pdf");
+      const isImage = file.type.startsWith("image/");
+      const minSize = 1024; // 1 KB
+      const maxSize = 200 * 1024; // 200 KB
+
+      if (isPdf || !isImage) {
+        control.setCustomValidity(getTranslation("errorImageOnly"));
+      } else if (file.size < minSize) {
+        control.setCustomValidity(getTranslation("errorImageTooSmall"));
+      } else if (file.size > maxSize) {
+        control.setCustomValidity(getTranslation("errorImageTooLarge"));
+      } else {
+        control.setCustomValidity("");
+      }
+    } else {
+      control.setCustomValidity("");
+    }
+  }
+
   const messageElement = getMessageFor(control);
   const isValid = control.checkValidity();
   const shouldShow =
-    (control.type === "checkbox" ? control.checked : control.value) ||
-    showEmpty;
+    (control.type === "checkbox"
+      ? control.checked
+      : control.type === "file"
+        ? Boolean(control.files && control.files.length)
+        : control.value) || showEmpty;
 
   control.classList.toggle("is-invalid", !isValid && shouldShow);
   control.classList.remove("is-valid");
@@ -641,6 +669,13 @@ form.addEventListener("submit", async (event) => {
         !control.checked
       )
         return;
+      if (control.type === "file") {
+        const file = control.files && control.files[0];
+        if (file) {
+          submission.append(control.name, `${file.name} (${(file.size / 1024).toFixed(1)} KB)`);
+        }
+        return;
+      }
       submission.append(control.name, control.value);
     });
 

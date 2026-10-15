@@ -44,19 +44,23 @@ const translations = {
     labelNationality: "Nationality",
     labelStateOfOrigin: "State of origin",
     labelLga: "LGA / local area",
+    labelAddress: "Residential address",
+    labelHouseImage: "House address image",
     labelDob: "Date of birth",
     labelNextOfKinName: "Next of kin full name",
     labelKinPhone: "Next of kin phone number",
     labelNin: "National Identification Number (NIN)",
     labelDisabilityType: "Please specify the type",
     labelChildrenCount: "Number of children",
-    // Placeholders
+    // Placeholders & hints
     placeholderEmail: "name@example.com",
     placeholderPhone: "8012345678",
     placeholderNationality: "Type a country name",
     placeholderState: "Choose or type a state",
     placeholderLga: "Choose or type an area",
+    placeholderAddress: "Enter full residential street address (min 30 characters)",
     placeholderNin: "11 digits",
+    hintHouseImage: "Accepts image files only (PNG, JPG, WebP, etc. No PDF). Size must be between 1 KB and 200 KB.",
     // Select options
     genderChoose: "Choose an option",
     genderMale: "Male",
@@ -105,6 +109,10 @@ const translations = {
     errorRequired: "This field is required.",
     errorEmail: "Enter a valid email address.",
     errorTooShort: "Enter at least {min} characters.",
+    errorAddressTooShort: "Address must be at least 30 characters.",
+    errorImageOnly: "Please upload an image file (PDF is not allowed).",
+    errorImageTooSmall: "Image size must be at least 1 KB.",
+    errorImageTooLarge: "Image size must not exceed 200 KB.",
     errorPasswordPattern:
       "Use uppercase and lowercase letters, a number, and a symbol.",
     errorNinPattern: "Enter exactly 11 digits.",
@@ -149,6 +157,8 @@ const translations = {
     labelNationality: "Nationalit\u00e9",
     labelStateOfOrigin: "\u00c9tat d\u2019origine",
     labelLga: "Zone locale / LGA",
+    labelAddress: "Adresse r\u00e9sidentielle",
+    labelHouseImage: "Photo de l\u2019adresse du domicile",
     labelDob: "Date de naissance",
     labelNextOfKinName: "Nom complet du contact d\u2019urgence",
     labelKinPhone: "T\u00e9l\u00e9phone du contact d\u2019urgence",
@@ -160,7 +170,9 @@ const translations = {
     placeholderNationality: "Tapez un nom de pays",
     placeholderState: "Choisissez ou tapez un \u00e9tat",
     placeholderLga: "Choisissez ou tapez une zone",
+    placeholderAddress: "Entrez l\u2019adresse r\u00e9sidentielle compl\u00e8te (min. 30 caract\u00e8res)",
     placeholderNin: "11 chiffres",
+    hintHouseImage: "Fichiers image uniquement (PNG, JPG, WebP, etc. Pas de PDF). La taille doit \u00eatre comprise entre 1 Ko et 200 Ko.",
     genderChoose: "Choisissez une option",
     genderMale: "Homme",
     genderFemale: "Femme",
@@ -200,6 +212,10 @@ const translations = {
     errorRequired: "Ce champ est obligatoire.",
     errorEmail: "Entrez une adresse e-mail valide.",
     errorTooShort: "Entrez au moins {min} caract\u00e8res.",
+    errorAddressTooShort: "L\u2019adresse doit comporter au moins 30 caract\u00e8res.",
+    errorImageOnly: "Veuillez t\u00e9l\u00e9verser un fichier image (le format PDF n\u2019est pas autoris\u00e9).",
+    errorImageTooSmall: "La taille de l\u2019image doit \u00eatre d\u2019au moins 1 Ko.",
+    errorImageTooLarge: "La taille de l\u2019image ne doit pas d\u00e9passer 200 Ko.",
     errorPasswordPattern:
       "Utilisez des majuscules, minuscules, un chiffre et un symbole.",
     errorNinPattern: "Entrez exactement 11 chiffres.",
@@ -245,6 +261,8 @@ const translations = {
     labelNationality: "Nacionalidad",
     labelStateOfOrigin: "Estado de origen",
     labelLga: "\u00c1rea local / LGA",
+    labelAddress: "Direcci\u00f3n residencial",
+    labelHouseImage: "Foto de la direcci\u00f3n de la casa",
     labelDob: "Fecha de nacimiento",
     labelNextOfKinName: "Nombre completo del familiar",
     labelKinPhone: "Tel\u00e9fono del familiar",
@@ -256,7 +274,9 @@ const translations = {
     placeholderNationality: "Escribe un nombre de pa\u00eds",
     placeholderState: "Elige o escribe un estado",
     placeholderLga: "Elige o escribe un \u00e1rea",
+    placeholderAddress: "Introduce la direcci\u00f3n residencial completa (m\u00edn. 30 caracteres)",
     placeholderNin: "11 d\u00edgitos",
+    hintHouseImage: "Solo archivos de imagen (PNG, JPG, WebP, etc. No PDF). El tama\u00f1o debe estar entre 1 KB y 200 KB.",
     genderChoose: "Elige una opci\u00f3n",
     genderMale: "Masculino",
     genderFemale: "Femenino",
@@ -295,6 +315,10 @@ const translations = {
     errorRequired: "Este campo es obligatorio.",
     errorEmail: "Introduce una direcci\u00f3n de correo v\u00e1lida.",
     errorTooShort: "Introduce al menos {min} caracteres.",
+    errorAddressTooShort: "La direcci\u00f3n debe tener al menos 30 caracteres.",
+    errorImageOnly: "Por favor, sube un archivo de imagen (no se permite PDF).",
+    errorImageTooSmall: "El tama\u00f1o de la imagen debe ser de al menos 1 KB.",
+    errorImageTooLarge: "El tama\u00f1o de la imagen no debe superar los 200 KB.",
     errorPasswordPattern:
       "Usa may\u00fasculas, min\u00fasculas, un n\u00famero y un s\u00edmbolo.",
     errorNinPattern: "Introduce exactamente 11 d\u00edgitos.",
@@ -354,6 +378,10 @@ const translations = {
       "\u0648\u0644\u0627\u064a\u0629 \u0627\u0644\u0623\u0635\u0644",
     labelLga:
       "\u0627\u0644\u0645\u0646\u0637\u0642\u0629 \u0627\u0644\u0645\u062d\u0644\u064a\u0629",
+    labelAddress:
+      "\u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0633\u0643\u0646",
+    labelHouseImage:
+      "\u0635\u0648\u0631\u0629 \u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0645\u0646\u0632\u0644",
     labelDob:
       "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0645\u064a\u0644\u0627\u062f",
     labelNextOfKinName:
@@ -375,7 +403,11 @@ const translations = {
       "\u0627\u062e\u062a\u0631 \u0623\u0648 \u0627\u0643\u062a\u0628 \u0648\u0644\u0627\u064a\u0629",
     placeholderLga:
       "\u0627\u062e\u062a\u0631 \u0623\u0648 \u0627\u0643\u062a\u0628 \u0645\u0646\u0637\u0642\u0629",
+    placeholderAddress:
+      "\u0623\u062f\u062e\u0644 \u0639\u0646\u0648\u0627\u0646 \u0627\u0644\u0633\u0643\u0646 \u0628\u0627\u0644\u0643\u0627\u0645\u0644 (30 \u062d\u0631\u0641\u064b\u0627 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644)",
     placeholderNin: "11 \u0631\u0642\u0645\u064b\u0627",
+    hintHouseImage:
+      "\u0645\u0644\u0641\u0627\u062a \u0627\u0644\u0635\u0648\u0631 \u0641\u0642\u0637 (PNG \u0648JPG \u0648WebP \u0625\u0644\u062e. \u0644\u0627 \u064a\u064f\u0642\u0628\u0644 PDF). \u064a\u062c\u0628 \u0623\u0646 \u064a\u0643\u0648\u0646 \u0627\u0644\u062d\u062c\u0645 \u0628\u064a\u0646 1 \u0643\u064a\u0644\u0648\u0628\u0627\u064a\u062a \u0648200 \u0643\u064a\u0644\u0648\u0628\u0627\u064a\u062a.",
     genderChoose:
       "\u0627\u062e\u062a\u0631 \u062e\u064a\u0627\u0631\u064b\u0627",
     genderMale: "\u0630\u0643\u0631",
@@ -431,6 +463,14 @@ const translations = {
       "\u0623\u062f\u062e\u0644 \u0639\u0646\u0648\u0627\u0646 \u0628\u0631\u064a\u062f \u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0635\u0627\u0644\u062d\u064b\u0627.",
     errorTooShort:
       "\u0623\u062f\u062e\u0644 {min} \u0623\u062d\u0631\u0641 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644.",
+    errorAddressTooShort:
+      "\u064a\u062c\u0628 \u0623\u0646 \u064a\u0643\u0648\u0646 \u0627\u0644\u0639\u0646\u0648\u0627\u0646 30 \u062d\u0631\u0641\u064b\u0627 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644.",
+    errorImageOnly:
+      "\u064a\u0631\u062c\u0649 \u062a\u062d\u0645\u064a\u0644 \u0645\u0644\u0641 \u0635\u0648\u0631\u0629 (\u0644\u0627 \u064a\u064f\u0633\u0645\u062d \u0628\u0645\u0644\u0641\u0627\u062a PDF).",
+    errorImageTooSmall:
+      "\u064a\u062c\u0628 \u0623\u0646 \u064a\u0643\u0648\u0646 \u062d\u062c\u0645 \u0627\u0644\u0635\u0648\u0631\u0629 1 \u0643\u064a\u0644\u0648\u0628\u0627\u064a\u062a \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644.",
+    errorImageTooLarge:
+      "\u064a\u062c\u0628 \u0623\u0644\u0627 \u064a\u062a\u062c\u0627\u0648\u0632 \u062d\u062c\u0645 \u0627\u0644\u0635\u0648\u0631\u0629 200 \u0643\u064a\u0644\u0648\u0628\u0627\u064a\u062a.",
     errorPasswordPattern:
       "\u0627\u0633\u062a\u062e\u062f\u0645 \u0623\u062d\u0631\u0641\u064b\u0627 \u0643\u0628\u064a\u0631\u0629 \u0648\u0635\u063a\u064a\u0631\u0629 \u0648\u0631\u0642\u0645\u064b\u0627 \u0648\u0631\u0645\u0632\u064b\u0627.",
     errorNinPattern:
@@ -483,6 +523,8 @@ const translations = {
     labelNationality: "Nationalit\u00e4t",
     labelStateOfOrigin: "Herkunftsstaat",
     labelLga: "Lokaler Bereich / LGA",
+    labelAddress: "Wohnadresse",
+    labelHouseImage: "Foto der Hausadresse",
     labelDob: "Geburtsdatum",
     labelNextOfKinName: "Vollst\u00e4ndiger Name des Notfallkontakts",
     labelKinPhone: "Telefon des Notfallkontakts",
@@ -494,7 +536,9 @@ const translations = {
     placeholderNationality: "L\u00e4ndernamen eingeben",
     placeholderState: "Staat ausw\u00e4hlen oder eingeben",
     placeholderLga: "Bereich ausw\u00e4hlen oder eingeben",
+    placeholderAddress: "Vollst\u00e4ndige Wohnadresse eingeben (mind. 30 Zeichen)",
     placeholderNin: "11 Ziffern",
+    hintHouseImage: "Nur Bilddateien (PNG, JPG, WebP usw. Kein PDF). Gr\u00f6\u00dfe muss zwischen 1 KB und 200 KB liegen.",
     genderChoose: "Option ausw\u00e4hlen",
     genderMale: "M\u00e4nnlich",
     genderFemale: "Weiblich",
@@ -533,6 +577,10 @@ const translations = {
     errorRequired: "Dieses Feld ist erforderlich.",
     errorEmail: "Geben Sie eine g\u00fcltige E-Mail-Adresse ein.",
     errorTooShort: "Geben Sie mindestens {min} Zeichen ein.",
+    errorAddressTooShort: "Die Adresse muss mindestens 30 Zeichen lang sein.",
+    errorImageOnly: "Bitte laden Sie eine Bilddatei hoch (PDF ist nicht erlaubt).",
+    errorImageTooSmall: "Die Bildgr\u00f6\u00dfe muss mindestens 1 KB betragen.",
+    errorImageTooLarge: "Die Bildgr\u00f6\u00dfe darf 200 KB nicht \u00fcberschreiten.",
     errorPasswordPattern:
       "Verwenden Sie Gro\u00df- und Kleinbuchstaben, eine Zahl und ein Symbol.",
     errorNinPattern: "Geben Sie genau 11 Ziffern ein.",

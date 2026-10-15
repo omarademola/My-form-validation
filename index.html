@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#f4f5f0" />
-    <title>Create your account | Omabell</title>
+    <title>USS | Thrift </title>
 
     <!--
       ┌─────────────────────────────────────────────────────────────┐
@@ -46,8 +46,8 @@
         The wordmark links to #main-content, which is an
         "skip to content" anchor. Useful for keyboard users.
       -->
-      <a class="wordmark" href="#main-content" aria-label="Omabell home"
-        >OMABELL<span>.</span></a
+      <a class="wordmark" href="#main-content" aria-label="USS home"
+        >USS<span>.</span></a
       >
       <p data-i18n="headerSubtitle">Profile registration</p>
 
@@ -478,17 +478,61 @@
                 aria-live="polite"
               ></small>
             </div>
+          </div>
+
+          <div class="field-grid field-grid--two">
+            <div class="field">
+              <label for="address">
+                <span data-i18n="labelAddress">Residential address</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="address"
+                name="Residential address"
+                type="text"
+                autocomplete="street-address"
+                required
+                minlength="30"
+                data-i18n-placeholder="placeholderAddress"
+                placeholder="Enter full residential street address (min 30 characters)"
+                data-error-too-short="errorAddressTooShort"
+              />
+              <small
+                class="field-message"
+                id="addressMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+            <div class="field">
+              <label for="houseImage">
+                <span data-i18n="labelHouseImage">House address image</span>
+                <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="houseImage"
+                name="House address image"
+                type="file"
+                accept="image/*"
+                required
+                aria-describedby="houseImageHint houseImageMessage"
+              />
+              <small id="houseImageHint" class="field-hint" data-i18n="hintHouseImage">
+                Accepts image files only (PNG, JPG, WebP, etc. No PDF). Size must be 200 KB.
+              </small>
+              <small
+                class="field-message"
+                id="houseImageMessage"
+                aria-live="polite"
+              ></small>
+            </div>
+          </div>
+
+          <div class="field-grid field-grid--two">
             <div class="field">
               <label for="dateOfBirth">
                 <span data-i18n="labelDob">Date of birth</span>
                 <span aria-hidden="true">*</span>
               </label>
-              <!--
-                NOTE: the min and max attributes are NOT set here.
-                script.js sets them dynamically so they always
-                reflect the current date (not the build date).
-                min = 120 years ago, max = 16 years ago.
-              -->
               <input
                 id="dateOfBirth"
                 name="Date of birth"
@@ -782,7 +826,7 @@
             <summary data-i18n="termsSummary">Read the Terms and Conditions</summary>
             <p data-i18n="termsBody">
               By submitting, you confirm that the details are accurate and
-              consent to sending them to Urban-Silhoutte. Password fields are
+              consent to sending them to USS. Password fields are
               never sent.
             </p>
           </details>
